@@ -47,4 +47,5 @@ re-start server and check result. Use command:
 ```commandline
 uvicorn app.main:app --reload
 ```
-### Create models for project  
+### Create models for project (Pydantic)  
+file `app/schemas.py`
