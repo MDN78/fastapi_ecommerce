@@ -28,9 +28,23 @@ APIRouter(*, prefix='', tags=None, dependencies=None, default_response_class=Def
 2. Transfer routers to main file:
 - create method `include_router()` to `main.py`  
 
-3. start server and check result/ Use command:
+3. start server and check result. Use command:
 ```commandline
 uvicorn app.main:app --reload
 ```
 [link to documentation](http://127.0.0.1:8000/docs)  
 
+### Create products  
+create templates in file `products.py`  
+Methods:
+- get all items
+- create item
+- get by category
+- get product detail
+- update and delete product   
+
+re-start server and check result. Use command:
+```commandline
+uvicorn app.main:app --reload
+```
+### Create models for project  
