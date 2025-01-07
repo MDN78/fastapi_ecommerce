@@ -7,6 +7,10 @@ start server
 uvicorn app.main:app --reload
 ```
 
+create user - postgreSQL
+```commandline
+CREATE USER ecommerce WITH PASSWORD 'XXXXXX'
+```
 
 
 
