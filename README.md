@@ -17,3 +17,7 @@ alembic revision --autogenerate -m "Initial migration"
 ```
 
 User name admin 123456
+
+Slava - customer 123456
+
+Semen customer2 111111
