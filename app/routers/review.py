@@ -60,7 +60,7 @@ async def add_review(db: Annotated[AsyncSession, Depends(get_db)], create_review
     }
 
 
-@router.get('/{product_name}')
+@router.get('/{product_id}')
 async def products_reviews(db: Annotated[AsyncSession, Depends(get_db)], product_id: int):
     product = await db.scalar(select(Product).where(Product.id == product_id, Product.is_active == True))
     if not product:
