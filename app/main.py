@@ -1,9 +1,6 @@
 from fastapi import FastAPI
 from app.routers import category, products, review, auth, permission
 
-# from app.routers import auth
-# from app.routers import permission
-
 app = FastAPI()
 
 

@@ -1,23 +1,37 @@
+## Fast API e-commerce shop
 
-start server:
+### Local run:  
+1. Download project
+2. install requirements
+3. add dates to `alembic.ini` and `db.py`
+4. start migrations:
+
+```commandline
+alembic init -t async app/migrations
+```
+
+```commandline
+alembic revision --autogenerate -m "Initial migration"
+```
+
+```commandline
+alembic upgrade head
+```
+5. check tables
+6. 
+
+
+7. start server:
 ```commandline
 uvicorn app.main:app --reload
 ```
 
 [main page docs](http://127.0.0.1:8000/docs)
 
-create environment migrations:
-```commandline
-alembic init app/migrations
-```
+8. Create users (examples):
 
-first migration:
-```commandline
-alembic revision --autogenerate -m "Initial migration"
-```
+- User name admin 123456
 
-User name admin 123456
+- Slava - customer 123456
 
-Slava - customer 123456
-
-Semen customer2 111111
+- Semen customer2 111111

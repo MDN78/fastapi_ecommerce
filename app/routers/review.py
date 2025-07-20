@@ -1,8 +1,7 @@
-from datetime import datetime
+# from datetime import datetime
 
 from fastapi import APIRouter, Depends, status, HTTPException
 from typing import Annotated
-from slugify import slugify
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.backend.db_depends import get_db
 from sqlalchemy import select, insert, func, update
@@ -76,5 +75,19 @@ async def products_reviews(db: Annotated[AsyncSession, Depends(get_db)], product
 
 
 @router.delete('/')
-async def delete_reviews():
-    pass
+async def delete_reviews(db: Annotated[AsyncSession, Depends(get_db)], review_id: int,
+                         get_user: Annotated[dict, Depends(get_current_user)]):
+    if not get_user.get('is_admin'):
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN,
+                            detail='You have not enough permission for this action')
+
+    review = await db.scalar(select(Review).where(Review.id == review_id, Review.is_active == True))
+    if not review:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail='Review not found')
+    review.is_active = False
+
+    await db.commit()
+    return {
+        'status_code': status.HTTP_200_OK,
+        'transaction': 'Review delete successful',
+    }

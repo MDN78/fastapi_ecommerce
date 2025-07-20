@@ -17,13 +17,3 @@ class Review(Base):
     comment_data = Column(DateTime, default=func.now())
     grade = Column(Integer, nullable=False)
     is_active = Column(Boolean, default=True)
-
-    # user = relationship("User", back_populates="reviews")
-    # product = relationship("Product", back_populates="reviews")
-
-# from sqlalchemy.schema import CreateTable
-# print(CreateTable(Review.__table__))
-
-# if __name__ == '__main__':
-#     from sqlalchemy.schema import CreateTable
-#     print(CreateTable(Review.__table__))
