@@ -1,0 +1,9 @@
+fastapi==0.115.14
+uvicorn==0.34.3
+sqlalchemy==2.0.41
+alembic==1.16.2
+python-slugify==8.0.4
+passlib
+bcrypt==4.0.1
+python-multipart==0.0.20
+PyJWT==2.10.1
