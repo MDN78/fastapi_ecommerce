@@ -1,5 +1,3 @@
-# from datetime import datetime
-
 from fastapi import APIRouter, Depends, status, HTTPException
 from typing import Annotated
 from sqlalchemy.ext.asyncio import AsyncSession
