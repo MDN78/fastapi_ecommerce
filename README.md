@@ -41,3 +41,17 @@ uvicorn app.main:app --reload
 - Slava - customer 123456
 
 - Semen customer2 111111
+
+8. Docker  
+- close containers 
+```commandline
+docker-compose down -v
+```
+- build containers
+```commandline
+docker-compose up -d --build
+```
+- start migrations command
+```commandline
+docker-compose exec web alembic upgrade head
+```
