@@ -1,5 +1,13 @@
 ## Fast API e-commerce shop
 
+### Technology
+
+- SQLAlchemy
+- Alembic
+- logging with Middleware
+- 
+
+
 ### Local run:  
 1. Download project
 2. install requirements
@@ -18,17 +26,15 @@ alembic revision --autogenerate -m "Initial migration"
 alembic upgrade head
 ```
 5. check tables
-6. 
 
-
-7. start server:
+6. start server:
 ```commandline
 uvicorn app.main:app --reload
 ```
 
 [main page docs](http://127.0.0.1:8000/docs)
 
-8. Create users (examples):
+7. Create users (examples):
 
 - User name admin 123456
 
